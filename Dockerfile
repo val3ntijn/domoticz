@@ -9,8 +9,7 @@ LABEL maintainer="val3ntijn"
 
 RUN echo "**** install runtime packages ****" && \
     apk add --no-cache \
-    iputils \
-    setcap && \
+    iputils && \
     echo "**** run ping fix ****" && \
     setcap cap_net_raw=+eip /var/lib/domoticz/domoticz && \
     setcap cap_net_raw=+eip /bin/ping
